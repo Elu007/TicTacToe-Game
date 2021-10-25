@@ -139,9 +139,12 @@ public class MainGame {
             }
             else if(cpuPositions.containsAll(l)){
                 return "CPU Wins :(";
-            } else if(playerPositions.size() + cpuPositions.size() == 9){
-                return "DRAW!";
             }
+        }
+        /* This if statement is out of the loop because if we put the winning piece at the last
+        turn it will show correct result otherwise it will show wrong result (BUG fixed) */
+        if(playerPositions.size() + cpuPositions.size() == 9){
+            return "DRAW!";
         }
         return "";
     }
